@@ -246,8 +246,10 @@
 
                 // execute the request
                 return httpGet(url).then(function () {
-
                     // mark item as completed
+                    item.__completed = true;
+                }).catch(function () {
+                    // temporary fix (ref https://github.com/john-doherty/mixpanel-lite/issues/5)
                     item.__completed = true;
                 });
             };
