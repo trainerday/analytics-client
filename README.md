@@ -19,6 +19,9 @@ Add [analytics-client.min.js](dist/analytics-client.min.js) to your project:
 At present only the following methods are supported:
 
 ```js
+// The library exposes a global 'mixpanel' object for API compatibility
+// You can alias it for cleaner code: var analytics = mixpanel;
+
 // setup analytics client
 mixpanel.init('your-token-here'); // pass { mute: true } to mute by default
 
