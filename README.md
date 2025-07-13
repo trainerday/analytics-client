@@ -19,40 +19,40 @@ Add [analytics-client.min.js](dist/analytics-client.min.js) to your project:
 At present only the following methods are supported:
 
 ```js
-// The library exposes a global 'mixpanel' object for API compatibility
-// You can alias it for cleaner code: var analytics = mixpanel;
+// Alias for cleaner code
+var analytics = mixpanel;
 
 // setup analytics client
-mixpanel.init('your-token-here'); // pass { mute: true } to mute by default
+analytics.init('your-token-here'); // pass { mute: true } to mute by default
 
 // assign all future events to a user
-mixpanel.identify('user@email.com');
+analytics.identify('user@email.com');
 
 // register 'Gender' as a super property
-mixpanel.register({'Gender': 'Female'});
+analytics.register({'Gender': 'Female'});
 
 // assign user info
-mixpanel.people.set({
+analytics.people.set({
     $email: 'user@email.com' // only special properties need the $
 });
 
 // track an event
-mixpanel.track('Your Event Name' {
+analytics.track('Your Event Name' {
     firstName: 'Optional event property 1',
     lastName: 'Optional event property 2'
 });
 
 // clear current identity
-mixpanel.reset();
+analytics.reset();
 
 // stop sending data to analytics (calls to track, identify etc are ignored)
-mixpanel.mute();
+analytics.mute();
 
 // resume sending data to analytics
-mixpanel.unmute();
+analytics.unmute();
 
 // check if analytics is muted
-if (mixpanel.muted) {
+if (analytics.muted) {
     console.log('Analytics is disabled');
 }
 ```
