@@ -8,6 +8,24 @@ This library provides a simple API for tracking events and user properties, comp
 
 **Note**: This client library can be used with self-hosted analytics APIs (like [TrainerDay's analytics-api](https://github.com/trainerday/analytics-api)) or any compatible analytics service endpoint.
 
+## Self-Hosted Integration
+
+To use with [TrainerDay's analytics-api](https://github.com/trainerday/analytics-api):
+
+```javascript
+// Initialize with your self-hosted API endpoints
+analytics.init('your-analytics-token', {
+    trackingUrl: 'https://your-domain.com/track?data=',
+    engageUrl: 'https://your-domain.com/engage?data='
+});
+
+// All existing code works unchanged
+analytics.track('Event Name', { property: 'value' });
+analytics.identify('user@email.com');
+```
+
+**Demo**: The analytics-api project includes a complete demo page at `/demo/index.html` showing integration examples.
+
 ## Usage
 
 Add [analytics-client.min.js](dist/analytics-client.min.js) to your project:
