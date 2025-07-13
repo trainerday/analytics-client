@@ -35,14 +35,14 @@ npm install @trainerday/analytics-client
 
 ### CDN Installation
 ```html
-<script src="https://unpkg.com/@trainerday/analytics-client@latest/dist/mixpanel-lite.min.js"></script>
+<script src="https://unpkg.com/@trainerday/analytics-client@latest/dist/analytics-client.min.js"></script>
 ```
 
 ### Manual Installation
-Download [mixpanel-lite.min.js](dist/mixpanel-lite.min.js) and add to your project:
+Download [analytics-client.min.js](dist/analytics-client.min.js) and add to your project:
 
 ```html
-<script src="mixpanel-lite.min.js"></script>
+<script src="analytics-client.min.js"></script>
 ```
 
 At present only the following methods are supported:
