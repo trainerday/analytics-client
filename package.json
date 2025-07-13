@@ -1,6 +1,6 @@
 {
   "name": "@trainerday/analytics-client",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "A lightweight JavaScript analytics client library with offline support for Hybrid and Progressive Web Apps",
   "main": "dist/analytics-client.min.js",
   "scripts": {
