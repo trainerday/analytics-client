@@ -1,23 +1,25 @@
-# mixpanel-lite
+# Analytics Client
 
 [![Build Status](https://travis-ci.org/john-doherty/mixpanel-lite.svg?branch=master)](https://travis-ci.org/john-doherty/mixpanel-lite)
 
-A lightweight _(2.9k)_ alternative to [mixpanel-js](https://github.com/mixpanel/mixpanel-js) with offline support for Hybrid and Progressive Web Apps.
+A lightweight _(2.9k)_ JavaScript analytics client library with offline support for Hybrid and Progressive Web Apps.
 
-Events are written to localStorage first and are only removed once the Mixpanel [HTTP API](https://developer.mixpanel.com/docs/http) confirms receipt, thus allowing the device to go offline without losing events.
+This library provides a simple API for tracking events and user properties, compatible with popular analytics service endpoints. Events are written to localStorage first and are only removed once the analytics API confirms receipt, thus allowing the device to go offline without losing events.
+
+**Note**: This client library can be used with self-hosted analytics APIs (like [TrainerDay's analytics-api](https://github.com/trainerday/analytics-api)) or any compatible analytics service endpoint.
 
 ## Usage
 
-Add [mixpanel-lite.min.js](dist/mixpanel-lite.min.js) to your project:
+Add [analytics-client.min.js](dist/analytics-client.min.js) to your project:
 
 ```html
-<script src="mixpanel-lite.min.js"></script>
+<script src="analytics-client.min.js"></script>
 ```
 
 At present only the following methods are supported:
 
 ```js
-// setup mixpanel
+// setup analytics client
 mixpanel.init('your-token-here'); // pass { mute: true } to mute by default
 
 // assign all future events to a user
@@ -40,15 +42,15 @@ mixpanel.track('Your Event Name' {
 // clear current identity
 mixpanel.reset();
 
-// stop sending data to mixpanel (calls to track, identify etc are ignored)
+// stop sending data to analytics (calls to track, identify etc are ignored)
 mixpanel.mute();
 
-// resume sending data to mixpanel
+// resume sending data to analytics
 mixpanel.unmute();
 
-// check if mixpanel is muted
+// check if analytics is muted
 if (mixpanel.muted) {
-    console.log('Mixpanel is disabled');
+    console.log('Analytics is disabled');
 }
 ```
 
@@ -64,11 +66,11 @@ Pull requests are welcomed:
 
 ### Dependencies
 
-mixpanel-lite uses `window.localStorage` and `window.Promise` which should exist in all modern browsers.
+analytics-client uses `window.localStorage` and `window.Promise` which should exist in all modern browsers.
 
 ### Update .min files
 
-To generate a new [mixpanel-lite.min.js](dist/mixpanel-lite.min.js) from source, tweak the version number in `package.json` and run:
+To generate a new [analytics-client.min.js](dist/analytics-client.min.js) from source, tweak the version number in `package.json` and run:
 
 ```bash
 npm run build
